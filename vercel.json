@@ -1,6 +1,5 @@
 {
   "version": 2,
   "bunVersion": "1.x",
-  "builds": [{ "src": "index.js", "use": "@vercel/bun" }],
   "routes": [{ "src": "/(.*)", "dest": "index.js" }]
 }
