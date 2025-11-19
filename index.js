@@ -1,9 +1,10 @@
+// index.js
 import app from './src/app.js';
-import Bun from 'bun';
 
-const bunApp = Bun.server({
-  port: 3030,
-  fetch: app.fetch,
-});
+// Vercel invokes this handler function for every request
+export default async function handler(request) {
+  // Pass the request to your application's logic
+  return app.fetch(request);
+}
 
-console.log(`server is started goto ${bunApp.url}ui`);
+// Remove all Bun.serve() related code.
